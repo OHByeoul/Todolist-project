@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/todolist", method = RequestMethod.GET)
-public class HelloController {
+public class TodolistController {
 	@RequestMapping(value = "/hello")
 	@ResponseBody
 	public String hello(){

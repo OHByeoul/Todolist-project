@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping(value = "/todolist", method = RequestMethod.GET)
 public class TodolistController {
-	@RequestMapping(value = "/hello")
-	@ResponseBody
-	public String hello(){
-		return "running test";
+	@RequestMapping(value = {"","/"}, method = RequestMethod.GET)
+	public String mainPage(){
+		return "/todolistMain";
 	}
 }

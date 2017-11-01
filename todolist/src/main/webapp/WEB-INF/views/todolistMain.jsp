@@ -60,11 +60,14 @@
     </nav>
     <main role="contents">
         <div class="container">
+         <%@include file= "todo/todoInputForm.jsp" %>
             <section class="main-banner">
                 <img src="https://shop365.com.sg/media/wysiwyg/home/Home-Page-Banner---Kenwood-_-Delonghi.jpg" alt="" class="img-responsive" />
             </section>
         </div>
-        <div class="darkness"></div>
+        <div class="darkness">
+       
+        </div>
     </main>
     <footer>
         <div class="darkness"></div>

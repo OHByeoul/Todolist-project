@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/css/add.css">    
-<script src="/scripts/add.js"></script>
+<script src="/scripts/todoInput.js"></script>
 <div class="container">
 <div class="col-md-5">
     <div class="form-area">  

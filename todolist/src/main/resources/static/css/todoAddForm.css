@@ -7,6 +7,9 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	color: #353535;
 }
+.btn-todoAdd {
+	float:left;
+}
 .content h1 {
 	text-align: center;
 }
@@ -27,10 +30,10 @@ body {
 	border: 1px solid #ddd;
 	background-color: #fcfcfc;
 }
-.panel .btn-group {
+.panel .btn-group .btn-todoAdd{
 	margin: 15px 0 30px;
 }
-.panel .btn-group .btn {
+.panel .btn-group .btn .btn-todoAdd {
 	transition: background-color .3s ease;
 }
 .table-filter {

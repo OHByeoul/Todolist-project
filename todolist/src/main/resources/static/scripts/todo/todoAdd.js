@@ -17,5 +17,15 @@ $(document).ready(function () {
         $('.table tr').css('display', 'none').fadeIn('slow');
       }
     });
-
+    
+    var todoTableLength = 0;
+    
+    $('.todoAddButton').on('click',function(){
+    	var newRow = $('#todo_template').clone();
+        newRow.prop('id','todoRow'+todoTableLength);
+        newRow.appendTo($('.table-container'));
+        newRow.show(); 	
+    });
+    
+    
  });

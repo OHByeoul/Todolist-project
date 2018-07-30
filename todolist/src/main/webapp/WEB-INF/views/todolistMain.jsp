@@ -4,6 +4,8 @@
 <html>
 <head>
 	<%@include file="import/resources.jsp"%>
+	<script src="/scripts/todolistMain.js"></script>
+	<link rel = "stylesheet" type="text/css" href="/css/todolistMain.css">
 </head>
 <body>
 
@@ -59,7 +61,7 @@
         </div>
     </nav>
     <main role="contents">
-        <div class="container">
+        <div class="container">  
          <%@include file= "todo/todoAddForm.jsp" %>
             <section class="main-banner">
                 <img src="https://shop365.com.sg/media/wysiwyg/home/Home-Page-Banner---Kenwood-_-Delonghi.jpg" alt="" class="img-responsive" />
@@ -73,4 +75,5 @@
         <div class="darkness"></div>
     </footer>
 </body>
+ <script src="/scripts/todo/todoAdd.js"></script>
 </html>

@@ -18,13 +18,13 @@ $(document).ready(function () {
       }
     });
     
-    var todoTableLength = 0;
+    var todolistLength = 1;
     
-    $('.todoAddButton').on('click',function(){
+    $('#save_todo').on('click',function(){
     	var newRow = $('#todo_template').clone();
-        newRow.prop('id','todoRow'+todoTableLength);
-        newRow.appendTo($('.table-container'));
-        newRow.show(); 	
+    	newRow.prop('id','todo'+todolistLength++);
+    	newRow.appendTo($('#todo_tbody'));
+    	newRow.show();
     });
     
     

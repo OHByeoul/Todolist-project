@@ -12,8 +12,8 @@ public class TodolistController {
 		return "/todolistMain";
 	}
 	
-	@RequestMapping(value="/addList", method = RequestMethod.POST)
-	public String addTodolist(){
+	@RequestMapping(value="/addTodo", method = RequestMethod.POST)
+	public String addTodo(){
 		return "/todolistMain";
 	}
 	

@@ -7,17 +7,19 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Todo 추가</h4>
       </div>
-      <form id="todo_add" method="POST" action="/todolist/addList"  onsubmit="return addCheck()">
+      <form id="todo_add" method="POST" action="/todolist/addTodo"  onsubmit="return addCheck()">
 	    <div class="modal-body">
-	    	<label for="add_title">제목</label>
+	    	<label for="add_title", name="title">제목</label>
 			<input id="add_title"class="form-control" name="title"></input>
-			   		<label for="add_contents">내용</label>
+			   		<label for="add_contents", name="content">내용</label>
 			<textarea id="add_contents"class="form-control" name="contents"></textarea>
 			
+			<label for="add_endDate">시작일</label>
+			<input type="date" id="add_startDate" name="startDate"class="time_input form-control"></input>
 			<label for="add_endDate">종료일</label>
-			<input type="date" id="add_endDate" class="time_input form-control"></input>
-			<input type="time" id="add_endTime" class="set_margin_after time_input form-control" placeholder="hh:mm"></input>
-			<input type="hidden" id="add_endDateTime" name="endDate">
+			<input type="date" id="add_endDate" name="endDate"class="time_input form-control"></input>
+			<!--  <input type="time" id="add_endTime" class="set_margin_after time_input form-control" placeholder="hh:mm"></input>-->
+			<!-- <input type="hidden" id="add_endDateTime" name="endDate"> -->
 		</div>
 		<div id="todo_tag">
 			태그달기

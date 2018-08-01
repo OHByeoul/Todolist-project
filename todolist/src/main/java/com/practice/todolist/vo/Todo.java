@@ -4,8 +4,8 @@ public class Todo {
 	private int todoSeq;
 	private String title;
 	private String content;
-	private String start_date;
-	private String end_date;
+	private String startDate;
+	private String endDate;
 	private String important;
 	private String complete;
 
@@ -33,20 +33,20 @@ public class Todo {
 		this.content = content;
 	}
 
-	public String getStart_date() {
-		return start_date;
+	public String getStartDate() {
+		return startDate;
 	}
 
-	public void setStart_date(String start_date) {
-		this.start_date = start_date;
+	public void setStartDate(String start_date) {
+		this.startDate = start_date;
 	}
 
-	public String getEnd_date() {
-		return end_date;
+	public String getEndDate() {
+		return endDate;
 	}
 
-	public void setEnd_date(String end_date) {
-		this.end_date = end_date;
+	public void setEndDate(String end_date) {
+		this.endDate = end_date;
 	}
 
 	public String getImportant() {

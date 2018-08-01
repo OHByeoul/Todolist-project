@@ -1,19 +1,28 @@
 package com.practice.todolist.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.practice.todolist.service.TodoService;
+import com.practice.todolist.vo.Todo;
+
 @Controller
 @RequestMapping(value = "/todolist")
 public class TodolistController {
+	@Autowired
+	TodoService todoService;
+	
 	@RequestMapping(value = {"","/"}, method = RequestMethod.GET)
 	public String mainPage(){
 		return "/todolistMain";
 	}
 	
 	@RequestMapping(value="/addTodo", method = RequestMethod.POST)
-	public String addTodo(){
+	public String addTodo(Todo todo){
+		todoService.addTodo(todo);
+		
 		return "/todolistMain";
 	}
 	

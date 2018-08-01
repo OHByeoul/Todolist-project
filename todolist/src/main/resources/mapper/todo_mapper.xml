@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.practice.todolist.dao.TodoDao">
+	<insert id="addTodo" parameterType="com.practice.todolist.vo.Todo">
+		INSERT INTO todo
+		(
+			todo_Seq,
+			title,
+			content,
+			start_date,
+			end_date,
+			important,
+			complete
+		)
+		VALUES
+		(
+			#{todoSeq},
+			#{title},
+			#{content},
+			#{startDate},
+			#{endDate},
+			#{important},
+			#{complete}
+		)
+		
+	</insert>
+</mapper>

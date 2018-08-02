@@ -1,5 +1,7 @@
 package com.practice.todolist.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,10 @@ public class TodoService {
 
 	public void addTodo(Todo todo) {
 		todoDao.addTodo(todo);
+	}
+
+	public List<Todo> getMyTodoList(String myId) {
+		return todoDao.selectByMyId(myId);
 	}
 	
 	

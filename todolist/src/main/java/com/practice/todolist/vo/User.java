@@ -1,7 +1,7 @@
 package com.practice.todolist.vo;
 
 public class User {
-	private int userSeq;
+	private String userSeq;
 	private String id;
 	private String password;
 	private String name;
@@ -11,18 +11,18 @@ public class User {
 	public User() {
 	}
 	
-	public User(int userSeq,String id,String password, String name) {
+	public User(String userSeq,String id,String password, String name) {
 		this.userSeq = userSeq;
 		this.id = id;
 		this.password = password;
 		this.name = name;
 	}
 
-	public int getUserSeq() {
+	public String getUserSeq() {
 		return userSeq;
 	}
 
-	public void setUserSeq(int userSeq) {
+	public void setUserSeq(String userSeq) {
 		this.userSeq = userSeq;
 	}
 

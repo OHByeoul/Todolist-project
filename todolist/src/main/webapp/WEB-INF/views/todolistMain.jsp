@@ -63,6 +63,7 @@
     <main role="contents">
         <div class="container">  
          <%@include file= "todo/todoAddForm.jsp" %>
+         <%@include file="todo/todos.jsp"%>
             <section class="main-banner">
                 <img src="https://shop365.com.sg/media/wysiwyg/home/Home-Page-Banner---Kenwood-_-Delonghi.jpg" alt="" class="img-responsive" />
             </section>

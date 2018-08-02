@@ -2,12 +2,22 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-<mapper namespace="com.practice.todolist.dao.TodoDao">
+ <mapper namespace="com.practice.todolist.dao.TodoDao">
+
+<resultMap type="com.practice.todolist.vo.Todo" id="todoMapping">
+	<result property="todoSeq" column="todo_seq"/>
+	<result property="title" column="title"/> 
+	<result property="content" column="content"/>
+	<result property="startDate" column="start_date"/>
+	<result property="endDate" column="end_date"/>
+	<result property="important" column="important"/>
+	<result property="complete" column="complete"/>
+	<result property="registeredUserSeq" column="registered_user_seq"/>
+</resultMap>
 	<insert id="addTodo" parameterType="com.practice.todolist.vo.Todo">
 		INSERT INTO todo
 		(
-			todo_Seq,
+			todo_seq,
 			title,
 			content,
 			start_date,
@@ -27,4 +37,25 @@
 		)
 		
 	</insert>
+	<select id="selectByMyId" parameterType="String" resultMap="todoMapping">
+		SELECT
+			t.todo_seq AS todoSeq,
+			t.title,
+			t.content,
+			date_format(t.start_date,'%Y-%m-%d') as startDate,
+			date_format(t.end_date,'%Y-%m-%d') as endDate,
+			t.important,
+			t.complete,
+			u.user_seq AS registeredUserSeq
+		FROM
+			todo t,
+			user u,
+			registered_todo rt
+		WHERE
+			t.todo_seq = rt.todo_seq
+			AND
+			u.user_seq = rt.user_seq
+			AND
+			rt.user_seq = #{registeredUserSeq}	
+	</select>
 </mapper>

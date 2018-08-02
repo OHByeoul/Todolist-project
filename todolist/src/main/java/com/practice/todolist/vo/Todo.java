@@ -1,19 +1,29 @@
 package com.practice.todolist.vo;
 
 public class Todo {
-	private int todoSeq;
+	private String todoSeq;
 	private String title;
 	private String content;
 	private String startDate;
 	private String endDate;
 	private String important;
 	private String complete;
+	
+	private String registeredUserSeq;
 
-	public int getTodoSeq() {
+	public String getRegisteredUserSeq() {
+		return registeredUserSeq;
+	}
+
+	public void setRegisteredUserSeq(String registeredUserSeq) {
+		this.registeredUserSeq = registeredUserSeq;
+	}
+
+	public String getTodoSeq() {
 		return todoSeq;
 	}
 
-	public void setTodoSeq(int todoSeq) {
+	public void setTodoSeq(String todoSeq) {
 		this.todoSeq = todoSeq;
 	}
 

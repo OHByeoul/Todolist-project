@@ -22,7 +22,7 @@ public class CookieManager {
 
 	public boolean createCookie(User validUser, HttpServletResponse res) throws CookieException {
 		try {
-			Cookie cookie = new Cookie(AUTH_KEY, validUser.getId());
+			Cookie cookie = new Cookie(AUTH_KEY, validUser.getUserSeq());
 			cookie.setMaxAge(60 * 60);
 			cookie.setPath("/");
 			res.addCookie(cookie);
@@ -60,6 +60,21 @@ public class CookieManager {
 			throw new CookieException(Error.CHECK_AUTHENICATED_USER_ERROR.toString());
 		}
 		return false;
+	}
+
+	public String getUserSeq(HttpServletRequest req, HttpServletResponse res) throws CookieException {
+		try {
+		Cookie [] cookies = req.getCookies();
+		for(Cookie cookie : cookies) {
+			if(cookie.getName().equals(AUTH_KEY)) {
+				return cookie.getValue();
+			}
+		}
+		}catch(Exception e){
+			deleteCookie(res);
+			logger.error("CookieManager (getUserSeq) :" + e.getMessage());
+		}
+		throw new CookieException(Error.COOKIE_ERROR.toString());
 	}
 
 	// public boolean checkAuthenicated(HttpServletRequest req,

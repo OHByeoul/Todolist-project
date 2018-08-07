@@ -31,7 +31,7 @@ public class UserService {
 		logger.info(calledUser.getPassword());
 		try {
 			if (checkCorrectUser(tryLoginUser, calledUser)) {
-				return cookieManager.createCookie(tryLoginUser, res);
+				return cookieManager.createCookie(calledUser, res);
 			}
 		} catch (Exception e) {
 			logger.error("UserService - doLogin : "+e.getMessage());

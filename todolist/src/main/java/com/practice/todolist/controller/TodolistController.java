@@ -2,13 +2,18 @@ package com.practice.todolist.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.practice.todolist.exception.CookieException;
 import com.practice.todolist.service.TodoService;
+import com.practice.todolist.util.CookieManager;
 import com.practice.todolist.vo.Todo;
 
 @Controller
@@ -17,9 +22,19 @@ public class TodolistController {
 	@Autowired
 	TodoService todoService;
 	
-	@RequestMapping(value = {"","/"}, method = RequestMethod.GET)
-	public String mainPage(String myId,Model model){
-		List<Todo> myTodos = todoService.getMyTodoList(myId);
+	@Autowired
+	CookieManager cookieManager;
+	
+	@Autowired
+	HttpServletRequest req;
+	
+	@Autowired
+	HttpServletResponse res;
+	
+	@RequestMapping(value = {"","/"}, method = {RequestMethod.GET, RequestMethod.POST})
+	public String mainPage(Model model) throws CookieException{
+		String userSeq = cookieManager.getUserSeq(req,res);
+		List<Todo> myTodos = todoService.getMyTodoList(userSeq);
 		model.addAttribute("todolist", myTodos);
 		return "/todolistMain";
 	}

@@ -3,6 +3,7 @@ package com.practice.todolist.constants;
 public enum ResultMessage {
 	LOGIN_FAIL(0, "로그인에 실패했습니다.");
 	
+	
 	private int code;
 	private String message;
 	

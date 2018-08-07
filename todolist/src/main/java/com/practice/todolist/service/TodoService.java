@@ -18,8 +18,8 @@ public class TodoService {
 	}
 
 	public List<Todo> getMyTodoList(String myId) {
-		return todoDao.selectByMyId(myId);
+		List<Todo> todos = todoDao.selectByMyId(myId);
+		return todos;
 	}
-	
 	
 }

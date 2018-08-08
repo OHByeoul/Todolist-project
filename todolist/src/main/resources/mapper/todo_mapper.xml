@@ -23,7 +23,8 @@
 			start_date,
 			end_date,
 			important,
-			complete
+			complete,
+			registered_user_seq
 		)
 		VALUES
 		(
@@ -33,7 +34,8 @@
 			#{startDate},
 			#{endDate},
 			#{important},
-			#{complete}
+			#{complete},
+			#{registeredUserSeq}
 		)
 		
 	</insert>

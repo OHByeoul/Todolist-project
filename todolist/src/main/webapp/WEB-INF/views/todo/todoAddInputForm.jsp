@@ -12,7 +12,7 @@
 	    	<label for="add_title", name="title">제목</label>
 			<input id="add_title"class="form-control" name="title"></input>
 			   		<label for="add_contents", name="content">내용</label>
-			<textarea id="add_contents"class="form-control" name="contents"></textarea>
+			<textarea id="add_contents"class="form-control" name="content"></textarea>
 			
 			<label for="add_endDate">시작일</label>
 			<input type="date" id="add_startDate" name="startDate"class="time_input form-control"></input>

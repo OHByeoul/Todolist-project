@@ -13,7 +13,39 @@
 	<result property="important" column="important"/>
 	<result property="complete" column="complete"/>
 	<result property="registeredUserSeq" column="registered_user_seq"/>
+	<collection
+		property="shareUsers"
+		javaType="java.util.ArrayList"
+		ofType="com.practice.todolist.vo.User"
+		column="{todoSeq=todoSeq}"
+		select="getShareUsers"/>
 </resultMap>
+	<select id="getShareUsers" resultType="com.practice.todolist.vo.User">
+		SELECT
+			u.user_seq AS userSeq,
+			u.id,
+			u.name,
+			u.password
+		FROM
+			user u,
+			registered_todo rt
+		WHERE
+			rt.user_seq = u.user_seq AND
+			rt.todo_seq = #{todoSeq}
+	</select>
+	<!-- 
+	<insert id="addRegisteredTodo" parameterType="com.practice.todolist.vo.Todo">
+		INSERT INTO registered_todo (
+			todo_seq,
+			user_seq
+		) VALUES (
+			#{todoSeq},
+			#{registeredUserSeq}
+		)
+			
+	</insert>
+	 -->
+
 	<insert id="addTodo" parameterType="com.practice.todolist.vo.Todo">
 		INSERT INTO todo
 		(
@@ -39,7 +71,7 @@
 		)
 		
 	</insert>
-	<select id="selectByMyId" parameterType="String" resultMap="todoMapping">
+	<select id="selectByMyTodo" parameterType="String" resultMap="todoMapping">
 		SELECT
 			t.todo_seq AS todoSeq,
 			t.title,
@@ -48,16 +80,11 @@
 			date_format(t.end_date,'%Y-%m-%d') as endDate,
 			t.important,
 			t.complete,
-			u.user_seq AS registeredUserSeq
+			t.registered_user_seq AS registeredUserSeq
 		FROM
 			todo t,
-			user u,
-			registered_todo rt
+			user u
 		WHERE
-			t.todo_seq = rt.todo_seq
-			AND
-			u.user_seq = rt.user_seq
-			AND
-			rt.user_seq = #{registeredUserSeq}	
+			t.registered_user_seq = u.user_seq
 	</select>
 </mapper>

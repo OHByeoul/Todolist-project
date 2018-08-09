@@ -1,5 +1,8 @@
 package com.practice.todolist.vo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Todo {
 	private String todoSeq;
 	private String title;
@@ -10,6 +13,19 @@ public class Todo {
 	private String complete;
 	
 	private String registeredUserSeq;
+	
+	List<User> shareUsers;
+
+	public Todo() {
+		shareUsers = new ArrayList<>();
+	}
+	public List<User> getShareUsers() {
+		return shareUsers;
+	}
+
+	public void setShareUsers(List<User> shareUsers) {
+		this.shareUsers = shareUsers;
+	}
 
 	public String getRegisteredUserSeq() {
 		return registeredUserSeq;

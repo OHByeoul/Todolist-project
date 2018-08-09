@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.practice.todolist.dao.TodoDao;
 import com.practice.todolist.vo.Todo;
+import com.practice.todolist.vo.User;
 
 @Service
 public class TodoService {
@@ -15,10 +16,11 @@ public class TodoService {
 
 	public void addTodo(Todo todo) {
 		todoDao.addTodo(todo);
+
 	}
 
 	public List<Todo> getMyTodoList(String myId) {
-		List<Todo> todos = todoDao.selectByMyId(myId);
+		List<Todo> todos = todoDao.selectByMyTodo(myId);
 		return todos;
 	}
 	

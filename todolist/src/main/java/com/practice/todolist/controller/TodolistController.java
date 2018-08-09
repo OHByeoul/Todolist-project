@@ -42,10 +42,9 @@ public class TodolistController {
 	@RequestMapping(value="/addTodo", method = RequestMethod.POST)
 	public String addTodo(Todo todo) throws CookieException{
 		String userSeq = cookieManager.getUserSeq(req,res);
-		System.out.println("seq : "+userSeq);
 		todo.setRegisteredUserSeq(userSeq);
 		todoService.addTodo(todo);	
-		return "/todolistMain";
+		return "redirect:/todolist";
 	}
 	
 	

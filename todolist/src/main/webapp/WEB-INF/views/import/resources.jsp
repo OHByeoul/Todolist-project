@@ -7,4 +7,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <!-- js적용 -->
 
-  <title>todolist</title>e>
+  <title>todolist</title>

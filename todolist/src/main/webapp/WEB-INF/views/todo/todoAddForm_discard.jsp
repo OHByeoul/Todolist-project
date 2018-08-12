@@ -20,9 +20,10 @@
 								<button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
 							</div>
 						</div>
-						<div >
+						<div>
 							<table>
 								<tbody id = "todo_tbody">
+								<c:forEach var="my" items="${todolist}" varStatus="status">
 									<tr id = "todo_template" style="display:none">
 										<td>
 											<div class="ckbox">
@@ -43,14 +44,15 @@
 												<div class="media-body">
 													<span class="media-meta pull-right">Febrero 13, 2016</span>
 													<h4 class="title">
-														title
+														${my.title} 
 														<span class="user_id">userId</span>
 													</h4>
-													<p class="content">content</p>
+													<p class="content">${my.content}</p>
 												</div>
 											</div>
 										</td>
 									</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>

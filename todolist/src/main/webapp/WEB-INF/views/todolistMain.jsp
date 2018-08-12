@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,6 +8,7 @@
 	<%@include file="import/resources.jsp"%>
 	<script src="/scripts/todolistMain.js"></script>
 	<link rel = "stylesheet" type="text/css" href="/css/todolistMain.css">
+	<link rel = "stylesheet" type="text/css" href="/css/todoAddForm.css">
 </head>
 <body>
 
@@ -65,15 +66,6 @@
     <main role="contents">
         <div class="container">  
          <%@include file= "todo/todoAddForm.jsp" %>
-     		<div>
-				<c:forEach var="my" items="${todolist}" varStatus="status">
-		    	<div class="col-xs-8">
-			    	<h4 class="panel-title">
-						${my.title}
-					</h4>
-				</div>
-				</c:forEach>
-			</div>
             <section class="main-banner">
                 <img src="https://shop365.com.sg/media/wysiwyg/home/Home-Page-Banner---Kenwood-_-Delonghi.jpg" alt="" class="img-responsive" />
             </section>

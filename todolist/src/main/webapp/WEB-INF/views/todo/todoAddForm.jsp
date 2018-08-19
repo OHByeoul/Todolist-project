@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<script src="/scripts/todo/todoAdd.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <div class="container">
 	<div class="panel-body">
 		<div>
-			<button type="button" data-toggle="modal"
+			<button type="button" id="add_todo" data-toggle="modal"
 				data-target="#todo_add_modal">할일추가</button>
 		</div>
 		<div class="pull-right">

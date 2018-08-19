@@ -15,4 +15,15 @@
 		WHERE
 			id = #{userId}
 	</select>
+	
+	<select id="selectByUserExceptMe" parameterType="String" resultType="com.practice.todolist.vo.User">
+		SELECT
+			id,
+			name
+		FROM
+			user
+		WHERE
+			user_seq != #{userSeq}
+		
+	</select>
 </mapper>

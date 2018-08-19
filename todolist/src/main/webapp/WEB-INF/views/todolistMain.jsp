@@ -78,5 +78,4 @@
         <div class="darkness"></div>
     </footer>
 </body>
- <script src="/scripts/todo/todoAdd.js"></script>
 </html>

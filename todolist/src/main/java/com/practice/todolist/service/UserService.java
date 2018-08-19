@@ -1,5 +1,7 @@
 package com.practice.todolist.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -54,4 +56,9 @@ public class UserService {
 		}
 		return false;
 	}
+	//---------------
+	public List<User> getAllUsersExceptMe(String userSeq){
+		return userDao.selectByUserExceptMe(userSeq);
+	}
+	
 }

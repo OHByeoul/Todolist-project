@@ -27,5 +27,27 @@ $(document).ready(function () {
     	newRow.show();
     });
     
-    
+    $('#add_todo').on('click', function showShareAvailableUsers(){
+    	$.ajax({
+    		type : 'get',
+    		url : '/user/searchUsers',
+    		success : function(result) {
+    			console.log(result)
+    			var shareUserId = "";
+    			var userListId = 1;
+    			for(var i = 0; i<result.length; i++){
+    				shareUserId += "<div id="+userListId+">"+"ID "+result[i].id+"   이름 "+result[i].name+"</div>";
+    				userListId++;
+    				console.log(shareUserId);
+    			}
+    			$('#share_list').html(shareUserId);
+ 
+    		},
+    		error : function(xhr, status, error) {
+    			console.log(xhr)
+    			alert(status);
+    		}
+    	})
+    });
+  
  });

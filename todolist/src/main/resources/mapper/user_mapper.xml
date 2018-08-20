@@ -18,6 +18,7 @@
 	
 	<select id="selectByUserExceptMe" parameterType="String" resultType="com.practice.todolist.vo.User">
 		SELECT
+			user_seq AS 'userSeq',
 			id,
 			name
 		FROM

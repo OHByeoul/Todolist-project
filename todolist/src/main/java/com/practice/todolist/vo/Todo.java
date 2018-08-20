@@ -11,19 +11,20 @@ public class Todo {
 	private String endDate;
 	private String important;
 	private String complete;
-	
+
 	private String registeredUserSeq;
-	
-	List<User> shareUsers;
+
+	List<String> shareUsers;
 
 	public Todo() {
 		shareUsers = new ArrayList<>();
 	}
-	public List<User> getShareUsers() {
+
+	public List<String> getShareUsers() {
 		return shareUsers;
 	}
 
-	public void setShareUsers(List<User> shareUsers) {
+	public void setShareUsers(List<String> shareUsers) {
 		this.shareUsers = shareUsers;
 	}
 

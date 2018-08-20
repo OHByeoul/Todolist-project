@@ -41,6 +41,7 @@ public class TodolistController {
 	
 	@RequestMapping(value="/addTodo", method = RequestMethod.POST)
 	public String addTodo(Todo todo) throws CookieException{
+		System.out.println("공유유저 : "+todo.getShareUsers()+"시작날 : "+todo.getStartDate());
 		String userSeq = cookieManager.getUserSeq(req,res);
 		todo.setRegisteredUserSeq(userSeq);
 		todoService.addTodo(todo);	

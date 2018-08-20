@@ -3,6 +3,7 @@
 <script src="/scripts/todo/todoAdd.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
 <div class="container">
 	<div class="panel-body">
 		<div>
@@ -49,6 +50,9 @@
 										<p class="summary">${my.content}</p>
 									</div>
 								</div>
+							</td>
+							<td data-name="del">
+								<button class="btn btn-danger glyphicon glyphicon-remove row-remove" value="" name="del2"></button>
 							</td>
 						</tr>
 					</c:forEach>

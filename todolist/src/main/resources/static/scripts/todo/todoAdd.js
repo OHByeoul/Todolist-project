@@ -51,4 +51,8 @@ $(document).ready(function () {
     	})
     });
   
+    $('.row-remove').on('click', function(){
+    	console.log('in');
+    	$(this).closest("tr").remove();
+    });
  });

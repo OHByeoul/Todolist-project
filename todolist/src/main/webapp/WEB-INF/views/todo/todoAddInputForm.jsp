@@ -26,7 +26,7 @@
 		</div>
 		<div id="todo_share">
 			공유추가
-			<div id="share_list"></div>
+			<div id="share_list" name="shareUsers"></div>
 		</div>
 		<div class="modal-footer">	
  	 	  	<button type="reset" class="btn btn-default" data-dismiss="modal">취소</button>

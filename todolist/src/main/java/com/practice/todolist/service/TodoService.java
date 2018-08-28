@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.practice.todolist.dao.TodoDao;
 import com.practice.todolist.vo.Todo;
-import com.practice.todolist.vo.User;
 
 @Service
 public class TodoService {
@@ -16,6 +15,7 @@ public class TodoService {
 
 	public void addTodo(Todo todo) {
 		todoDao.addTodo(todo);
+		todoDao.addShareUsers(todo);
 
 	}
 

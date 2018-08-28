@@ -71,6 +71,20 @@
 		)
 		
 	</insert>
+	
+	<insert id="addShareUsers" parameterType="com.practice.todolist.vo.Todo">
+		INSERT INTO registered_todo(
+			todo_seq,
+			user_seq
+		) VALUES 
+		<foreach collection="shareUsers" item="userSeq" separator=",">
+			(
+			#{todoSeq},
+			#{userSeq}
+			)
+		</foreach>
+	
+	</insert>
 	<select id="selectByMyTodo" parameterType="String" resultMap="todoMapping">
 		SELECT
 			t.todo_seq AS todoSeq,

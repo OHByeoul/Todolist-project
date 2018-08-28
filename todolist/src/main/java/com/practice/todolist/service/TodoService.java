@@ -14,7 +14,10 @@ public class TodoService {
 	TodoDao todoDao;
 
 	public void addTodo(Todo todo) {
+		todo.getShareUsers().add(todo.getRegisteredUserSeq());
 		todoDao.addTodo(todo);
+		String todoSeq = todoDao.selectRecentTodoSeq();
+		todo.setTodoSeq(todoSeq);
 		todoDao.addShareUsers(todo);
 
 	}

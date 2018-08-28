@@ -13,7 +13,9 @@ public interface TodoDao {
 
 	List<Todo> selectByMyTodo(String myId);
 
-	void addShareUsers(Todo todo); 
+	void addShareUsers(Todo todo);
+
+	String selectRecentTodoSeq(); 
 
 	
 }

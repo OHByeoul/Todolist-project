@@ -33,6 +33,15 @@
 			rt.user_seq = u.user_seq AND
 			rt.todo_seq = #{todoSeq}
 	</select>
+	
+	<select id="selectRecentTodoSeq" resultType="java.lang.String">
+		SELECT
+			todo_seq AS 'todoSeq'
+		FROM
+			todo
+		WHERE
+			todo_seq = (SELECT MAX(todo_seq) FROM TODO)		
+	</select>
 	<!-- 
 	<insert id="addRegisteredTodo" parameterType="com.practice.todolist.vo.Todo">
 		INSERT INTO registered_todo (
